@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="script.js" defer></script> -->
+
+</head>
+
+<body>
+    <div>
+        <select name="Смена" id="shift">
+            <option value="0">Смена А</option>
+            <option value="1">Смена Б</option>
+            <option value="2" selected>Смена В</option>
+            <option value="3">Смена Г</option>
+        </select>
+
+        <select name="График" id="timeTable">
+            <option value="0">по 4 дня </option>
+            <option value="1">день ночь отц. вых. </option>
+        </select>
+    </div>
+    <p> </p>
+    <div>
+        <input type="date" name="" id="calendar" onchange="changeCalendar">
+        <p id="today"></p>
+
+        <p id="diff">dss</p>
+    </div>
+
+    <script>
+        let date = new Date();
+
+        let calendar = document.getElementById("calendar");
+
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+
+        let today = year + "-" + month + "-" + day;
+        calendar.value = today;
+        calendar.onchange = changeCalendar;
+        document.getElementById("today").innerHTML = today;
+        let mainDate = new Date(18011 * 86400000);
+        changeCalendar();
+
+        //document.getElementById("diff").innerHTML = (Date)document.getElementById("calendar").value - (Date)today;
+        function changeCalendar() {
+            let curDate = new Date(calendar.value);
+
+            document.getElementById("diff").innerHTML = (curDate - mainDate) / 86400000;
+            console.log("onchange");
+        }
+
+
+    </script>
+</body>
+
+</html>

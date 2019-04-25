@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <div>
+        <select name="Смена" id="shift">
+            <option value="0">Смена А</option>
+            <option value="1">Смена Б</option>
+            <option value="2" selected>Смена В</option>
+            <option value="3">Смена Г</option>
+        </select>
+
+        <select name="График" id="timeTable">
+            <option value="0">по 4 дня </option>
+            <option value="1">день ночь отц. вых. </option>
+        </select>
+    </div>
+    <p> </p>
+    <div>
+        <input type="date" name="" id="calendar" onchange="changeCalendar">
+        
+        <p id="diff">dss</p>
+    </div>
+
+   
+</body>
+
+</html>
